@@ -25,7 +25,7 @@ class IndexController extends BaseController {
         $html = $this->fetch('dialog');
         $array = array(
             'dialog' => 'callBack(\'' . $html . '\')',
-            'eval' => 'eva("a")',
+            // 'eval' => 'eva("a")',
         );
         echo json_encode($array);
     }

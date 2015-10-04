@@ -12,12 +12,15 @@
     -webkit-animation: rotateInfinite 1s linear infinite;
     /*-webkit-animation: move 1s ease-in-out 1s 3 alternate forwards*/
 }
-/* #user-tabs{
+ #user-tabs{
     margin-bottom:0 !important;
 }
 .header-section{
     padding-bottom:15px;
-} */
+} 
+#user-nav-top{
+    display: none;
+}
 @-webkit-keyframes rotateInfinite
 {
     0%{
