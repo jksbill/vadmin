@@ -70,6 +70,11 @@
                     <a class="btn btn-alt btn-danger">Split</a>
                 </div>
             </div>
+            <form>
+                <div id="queue"></div>
+                <input class="file_upload" id="file_upload" queueID='queue' name="file_upload" type="file" multiple="true">
+                <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">确定上传</a>
+            </form>
         </div>
     </div>
 </div>

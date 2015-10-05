@@ -1,6 +1,7 @@
 
 <div id="page-content">
     <div id="user-nav-top">
+
         <ul class="breadcrumb breadcrumb-top" id="user-breadscrumb">
             <!-- <li>欢迎页</li> -->
             <!-- <li><a href="">Buttons &amp; Dropdowns</a></li> -->
@@ -15,6 +16,38 @@
             </div>
         </div>
     </div>
+
+        <!-- <form>
+            <div id="queue"></div>
+            <input class="file_upload" id="file_upload" queueID='queue' name="file_upload" type="file" multiple="true">
+            <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">确定上传</a>
+        </form>
+        <form>
+            <div id="queue1"></div>
+            <input class="file_upload" id="upload" queueID='queue1' name="file_upload" type="file" multiple="true">
+            <a style="position: relative; top: 8px;" href="javascript:$('#upload').uploadifive('upload')">确定上传</a>
+        </form> -->
+        <script type="text/javascript">
+            <?php $timestamp = time();?>
+            /*$(function() {
+                $(".file_upload").each(function (index, ele) {
+                    var queueID = $(ele).attr('queueID');
+                    $(ele).uploadifive({
+                        'auto'             : false,
+                        'formData'         : {
+                                               'timestamp' : '<?php echo $timestamp;?>',
+                                               'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+                                             },
+                        'buttonText'       : '选择上传文件',
+                        'queueID'          : queueID,
+                        'uploadScript'     : '/Public/uploadifive.php',
+                        'onUploadComplete' : function(file, data) { console.log(data); }
+                    });
+                })
+            });*/
+        </script>
+
+
     <div class="tab-content">
         <div class="tab-pane active" id="home-view">
             <div class="block" style="overflow: hidden;">

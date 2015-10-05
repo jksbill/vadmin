@@ -36,16 +36,24 @@
 
     <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
     <?php if ($template['theme']) { ?><link id="theme-link" rel="stylesheet" href="/Public/Proui/css/themes/<?php echo $template['theme']; ?>.css"><?php } ?>
-
+    <!-- uploadifive的配置 -->
+    <script type="text/javascript">
+        
+    <?php $timestamp = time();?>;
+        var timestamp = <?php echo $timestamp;?>;
+        var token = "<?php echo md5('unique_salt' . $timestamp);?>";
+    </script>
     <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
     <link rel="stylesheet" href="/Public/Proui/css/themes.css">
     <!-- END Stylesheets -->
 
+    <link rel="stylesheet" type="text/css" href="/Public/css/uploadifive.css">
     <link rel="stylesheet" href="/Public/css/manage.css">
     <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
     <script src="/Public/Proui/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
     <script src="/Public/Proui/js/vendor/jquery-1.11.0.min.js"></script>
     <script src="/Public/js/Sortable.js"></script>
+    <script src="/Public/js/jquery.uploadifive.min.js"></script>
     
     <!-- <script src="/Public/js/bootstrap.min.js"></script> -->
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/Public/Proui/js/vendor/jquery-1.11.0.min.js"%3E%3C/script%3E'));</script>
@@ -347,6 +355,7 @@
  
 <div id="page-content">
     <div id="user-nav-top">
+
         <ul class="breadcrumb breadcrumb-top" id="user-breadscrumb">
             <!-- <li>欢迎页</li> -->
             <!-- <li><a href="">Buttons &amp; Dropdowns</a></li> -->
@@ -361,6 +370,38 @@
             </div>
         </div>
     </div>
+
+        <!-- <form>
+            <div id="queue"></div>
+            <input class="file_upload" id="file_upload" queueID='queue' name="file_upload" type="file" multiple="true">
+            <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">确定上传</a>
+        </form>
+        <form>
+            <div id="queue1"></div>
+            <input class="file_upload" id="upload" queueID='queue1' name="file_upload" type="file" multiple="true">
+            <a style="position: relative; top: 8px;" href="javascript:$('#upload').uploadifive('upload')">确定上传</a>
+        </form> -->
+        <script type="text/javascript">
+            <?php $timestamp = time();?>
+            /*$(function() {
+                $(".file_upload").each(function (index, ele) {
+                    var queueID = $(ele).attr('queueID');
+                    $(ele).uploadifive({
+                        'auto'             : false,
+                        'formData'         : {
+                                               'timestamp' : '<?php echo $timestamp;?>',
+                                               'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+                                             },
+                        'buttonText'       : '选择上传文件',
+                        'queueID'          : queueID,
+                        'uploadScript'     : '/Public/uploadifive.php',
+                        'onUploadComplete' : function(file, data) { console.log(data); }
+                    });
+                })
+            });*/
+        </script>
+
+
     <div class="tab-content">
         <div class="tab-pane active" id="home-view">
             <div class="block" style="overflow: hidden;">

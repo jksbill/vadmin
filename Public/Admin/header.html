@@ -36,16 +36,24 @@
 
     <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
     <?php if ($template['theme']) { ?><link id="theme-link" rel="stylesheet" href="__PROUI__/css/themes/<?php echo $template['theme']; ?>.css"><?php } ?>
-
+    <!-- uploadifive的配置 -->
+    <script type="text/javascript">
+        
+    <?php $timestamp = time();?>;
+        var timestamp = <?php echo $timestamp;?>;
+        var token = "<?php echo md5('unique_salt' . $timestamp);?>";
+    </script>
     <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
     <link rel="stylesheet" href="__PROUI__/css/themes.css">
     <!-- END Stylesheets -->
 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/uploadifive.css">
     <link rel="stylesheet" href="__PUBLIC__/css/manage.css">
     <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
     <script src="__PROUI__/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
     <script src="__PROUI__/js/vendor/jquery-1.11.0.min.js"></script>
     <script src="__PUBLIC__/js/Sortable.js"></script>
+    <script src="__PUBLIC__/js/jquery.uploadifive.min.js"></script>
     
     <!-- <script src="__PUBLIC__/js/bootstrap.min.js"></script> -->
     <script>!window.jQuery && document.write(unescape('%3Cscript src="__PROUI__/js/vendor/jquery-1.11.0.min.js"%3E%3C/script%3E'));</script>

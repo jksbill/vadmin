@@ -46,6 +46,7 @@ function refresh (_this, url, data_tab) {
     getTabContent(url, data_tab, function (response) {
             $("#" + data_tab).html(response);
             unloading($(_this).find('i'));
+            $("#user-tab-content").trigger("initUploadifive", ["Hello","World!"]);
         });
 };
 function loadding ($dom) {
@@ -82,7 +83,9 @@ function removeTab (_this) {
         $("#user-nav-top").hide();
         $("#home-view").show();
         hide_home_view = false;
-    }
+    };
+    resetLeftNavActive($("#sidebar a:contains(" + prevSort + ")")[0]);
+    createBreadCrumb($("#sidebar a:contains(" + prevSort + ")")[0]);
     event.stopPropagation();
     event.preventDefault();
 };
@@ -187,4 +190,25 @@ function callBack (html) {
 };
 function showMask () {
     $("#mask").show();
-}
+};
+
+//init uploadify 
+$("#user-tab-content").bind("initUploadifive", function (event) {
+  // alert(message1 + ' ' + message2);
+  if ($(this).find('.file_upload').length) {
+    $(this).find('.file_upload').each(function (index, ele) {
+        var queueID = $(ele).attr('queueID');
+        $(ele).uploadifive({
+            'auto'             : false,
+            'formData'         : {
+                                   'timestamp' : timestamp,
+                                   'token'     : token,
+                                 },
+            'buttonText'       : '选择上传文件',
+            'queueID'          : queueID,
+            'uploadScript'     : '/Public/uploadifive.php',
+            'onUploadComplete' : function(file, data) { console.log(data); }
+        });
+    });
+  }
+});
