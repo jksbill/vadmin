@@ -47,13 +47,13 @@
     <link rel="stylesheet" href="/Public/Proui/css/themes.css">
     <!-- END Stylesheets -->
 
-    <link rel="stylesheet" type="text/css" href="/Public/css/uploadifive.css">
+    <link rel="stylesheet" type="text/css" href="/Public/uploadifive/uploadifive.css">
     <link rel="stylesheet" href="/Public/css/manage.css">
     <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
     <script src="/Public/Proui/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
     <script src="/Public/Proui/js/vendor/jquery-1.11.0.min.js"></script>
-    <script src="/Public/js/Sortable.js"></script>
-    <script src="/Public/js/jquery.uploadifive.min.js"></script>
+    <script src="/Public/sortable/Sortable.js"></script>
+    <script src="/Public/uploadifive/jquery.uploadifive.min.js"></script>
     
     <!-- <script src="/Public/js/bootstrap.min.js"></script> -->
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/Public/Proui/js/vendor/jquery-1.11.0.min.js"%3E%3C/script%3E'));</script>

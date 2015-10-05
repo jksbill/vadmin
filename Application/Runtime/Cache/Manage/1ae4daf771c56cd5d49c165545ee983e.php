@@ -12,12 +12,6 @@
                     </h3>
                 </div>
             </div>
-            <script type="text/javascript">
-                /*$(".widget-simple").click(function () {
-                    alert('ccc');
-                    $('#mask').modal('show');
-                })*/
-            </script>
             <!-- END Widget -->
         </div>
         <div class="col-sm-6 col-lg-3">
