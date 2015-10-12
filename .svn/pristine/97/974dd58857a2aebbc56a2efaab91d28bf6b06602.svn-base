@@ -1,0 +1,8 @@
+.nav-tabs li a{
+    border-color: #eaedf1;
+    background-color: #f9fafc;
+    text-indent: 100px;
+}
+body{
+    background: red;
+}

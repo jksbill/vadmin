@@ -1,0 +1,4 @@
+<include file="./Public/Admin/header.html" />
+<include file="./Public/Admin/head.html" />
+ {__CONTENT__}
+<include file="./Public/Admin/footer.html" />
