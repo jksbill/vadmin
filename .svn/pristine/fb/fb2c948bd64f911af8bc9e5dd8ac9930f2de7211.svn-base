@@ -21,6 +21,7 @@ function tab (_this) {
     sortTab(text);
     createBreadCrumb(dom);
     clearNav(text);
+    resetLeftNavActive(dom);
     setTimeout(function () {
         $(_this).addClass('active');
         $($(_this).find('a').attr('href')).addClass('active');
@@ -39,11 +40,13 @@ function clearNav (text) {
 function refresh (_this, url, data_tab, data) {
     var text = $(_this).text();
     var data_tab = data_tab || text;
-    var url = url || getAlinkHref(text);
+    var u = url || getStorage(text + 'url') || getAlinkHref(text);
+    // u = u == 'undefined' ? getAlinkHref(text) : u;
+    setStorage(text + 'url', u);
     loadding($(_this).find('i'));
     $("#" + data_tab).html('');
     // return;
-    getTabContent(url, data_tab, function (response) {
+    getTabContent(u, data_tab, function (response) {
             $("#" + data_tab).html(response);
             unloading($(_this).find('i'));
             $("#user-tab-content").trigger("initUploadifive", ["Hello","World!"]);
@@ -138,6 +141,14 @@ function createBreadCrumb (dom) {
     }
 };
 
+function setStorage (key, value) {
+    window.localStorage[key] = value;
+};
+
+function getStorage (key) {
+    return window.localStorage[key];
+}
+
 $(".ajaxLink").click(function () {
     var url = $(this).attr('href') || $(this).attr('data-href');
     var data_tab = $(this).attr('data-tab');
@@ -156,7 +167,6 @@ $(".ajaxLink").click(function () {
     if (clearNav(text)) {
         createTabNav(text, data_tab);
     }
-
     return false;
 });
 
@@ -182,7 +192,7 @@ $("#user-tab-content").click(function (ev) {
         });
         return false;
     } else if ($(ev.target).hasClass('ajaxFetch') || $(ev.target).parents('a').hasClass('ajaxFetch')) {
-        alert(url);
+        
         if (url.indexOf('?') !== -1) {
             var data = {};
             var paras = url.split('?');
