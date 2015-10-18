@@ -5,8 +5,8 @@
             'version'       => '1.2',
             'author'        => 'vsonter',
             'robots'        => 'noindex, nofollow',
-            'title'         => '珠海威信特公司后台管理',
-            'description'   => '珠海一流的网站建设，珠海微信开发，珠海微网站开发，珠海app开发，珠海威信特网络科技有限公司，拥有多年网站开发经验，值得信赖',
+            'title'         => '威信特后台管理',
+            'description'   => '威信特自己开发的后台管理系统',
             
             'header_navbar' => 'navbar-default',
             
@@ -27,31 +27,54 @@
         
         'PRIMARY_NAV' => array(
             array(
-                'name'  => 'Dashboard',
-                'en_name'  => 'Dashboard',
-                'url'   => '/manage/index/test',
-                'class'  => 'ajaxLink',
-                'icon'  => 'gi gi-stopwatch'
-            ),
-            array(
-                'name'  => 'Widget Kit',
+                'name'  => '常规设置',
                 'opt'   => '<a href="javascript:void(0)" data-toggle="tooltip" title="Quick Settings"><i class="gi gi-settings"></i></a>' .
                            '<a href="javascript:void(0)" data-toggle="tooltip" title="Create the most amazing pages with the widget kit!"><i class="gi gi-lightbulb"></i></a>',
                 'url'   => 'header',
             ),
             array(
-                'name'  => 'Statistics',
-                'en_name'  => 'Statistics',
-                'url'   => '/manage/index/test1',
+                'name'  => '表单组件',
+                'en_name'  => 'form',
+                'url'   => '/manage/index/test',
+                'url'   => '/manage/form/index',
                 'class'  => 'ajaxLink',
-                'icon'  => 'gi gi-charts'
+                'icon'  => 'gi gi-stopwatch'
             ),
             array(
-                'name'  => 'Media',
-                'en_name'  => 'Media',
+                'name'  => '弹窗',
+                'en_name'  => 'modal',
+                'url'   => '/manage/index/test1',
+                'url'   => '/manage/modal/index',
+                'class'  => 'ajaxLink',
+                'icon'  => 'gi gi-cutlery'
+            ),
+            array(
+                'name'  => '攻略',
+                'en_name'  => 'tip',
                 'url'   => '/manage/index/test2',
                 'class'  => 'ajaxLink',
-                'icon'  => 'gi gi-film'
+                'icon'  => 'gi gi-book'
+            ),
+            array(
+                'name'  => '酒店',
+                'en_name'  => 'hotail',
+                'url'   => '/manage/index/test4',
+                'class'  => 'ajaxLink',
+                'icon'  => 'gi gi-home'
+            ),
+            array(
+                'name'  => '赌场',
+                'en_name'  => 'gambling',
+                'url'   => '/manage/index/test4',
+                'class'  => 'ajaxLink',
+                'icon'  => 'gi gi-coins'
+            ),
+            array(
+                'name'  => '交通',
+                'en_name'  => 'traffic',
+                'url'   => '/manage/index/test4',
+                'class'  => 'ajaxLink',
+                'icon'  => 'gi gi-road'
             ),
             array(
                 'name'  => 'Design Kit',
@@ -60,17 +83,18 @@
             ),
             
             array(
-                'name'  => 'Forms',
-                'icon'  => 'gi gi-notes_2',
+                'name'  => '插件',
+                'icon'  => 'gi gi-shopping_cart',
                 'sub'   => array(
                     array(
-                        'name'  => 'General',
-                        'en_name'  => 'General',
+                        'name'  => 'uploadify',
+                        'en_name'  => 'uploadify',
                         'url'   => '/manage/index/test3',
                         'class'  => 'ajaxLink',
                     ),
                     array(
-                        'name'  => 'Components',
+                        'name'  => 'UEditor',
+                        'en_name'  => 'UEditor',
                         'url'   => 'page_forms_components.php'
                     ),
                     array(
@@ -84,11 +108,11 @@
                 )
             ),
             array(
-                'name'  => 'Icon Sets',
-                'icon'  => 'gi gi-cup',
+                'name'  => '其他',
+                'icon'  => 'gi gi-bookmark',
                 'sub'   => array(
                     array(
-                        'name'  => 'Font Awesome',
+                        'name'  => '我的附近',
                         'url'   => 'page_icons_fontawesome.php'
                     ),
                     array(
@@ -97,17 +121,6 @@
                     )
                 )
             ),
-            array(
-                'name'  => 'Develop Kit',
-                'opt'   => '<a href="javascript:void(0)" data-toggle="tooltip" title="Quick Settings"><i class="gi gi-settings"></i></a>',
-                'url'   => 'header',
-            ),
-            array(
-                'name'  => 'Social',
-                'en_name'  => 'Social',
-                'url'   => '/manage/index/test4',
-                'class'  => 'ajaxLink',
-                'icon'  => 'gi gi-share_alt'
-            ),
+
         ),
     );
