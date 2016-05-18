@@ -55,11 +55,38 @@ delete_db_batch('Article', $ids);
     新建文章
 </a>
 ```
+2、在href或data-href对应的控制器中使用$this->get_dialog_model()方法获取对应模板，模板中用到的变量也要分配过去。其中dislog_title和post_url是必须分配的。
+如：
+```txt
+$this->dialog_title = '添加文章类型';
+$this->post_url = '/Vsonter/Article/do_add_article_type';
+$this->get_dialog_model('Article/add_article_type_dialog');
+```
+3、在对应的View中添加模板文件。
 
-## License
+###表单控件
+```txt
+input:`{:W('Common/Form/input', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
+button:`{:W('Common/Form/button', array('btn'))}`
+hidden:`{:W('Common/Form/hidden_input', array('id', 'name', $value))}`
+password:`{:W('Common/Form/password', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
+checkbox:`{:W('Common/Form/checkbox', array('id', 'name', 'label_name', 1, 'help_block'))}`
+textarea:`{:W('Common/Form/textarea', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
+submit:`{:W('Common/Form/submit', array('btn', 'back', 'back_link'))}`
+upload:`{:W('Common/Form/upload', array('id', 'name', 'label_name', $value, 'queue_id'))}`
+ueditor:`{:W('Common/Form/ueditor', array($id, $name, $label_name, $value, 'help_block'))}`
+phone:`{:W('Common/Form/phone', array($id, $name, $label_name, $value, 'place_holder', 'help_block'))}`
+timer-picker:`{:W('Common/Form/timerpicker', array('id', 'name', 'label_name', $value, 'yyyy/mm/dd', 'help_block'))}`
+date-picker:`{:W('Common/Form/datepicker', array('id', 'name', 'label_name', $value, 'yyyy/mm/dd', 'help_block'))}`
+single-select:`{:W('Common/Form/single_select', array('id', 'name', 'label_name', $options, $value, 'place_holder', 'help_block'))}`
+search-input:`{:W('Common/Form/search_input', array($id, $name, 'place_holder', 'direction', 'ico'))}`
+multiple-select:`{:W('Common/Form/multiple_select', array($id, $name, $label_name, $options, 'place_holder', 'help_block'))}`
+spinner:`{:W('Common/Form/spinner', array($id, $name, $label_name, $value, 'help_block'))}`
+```
 
-This software is distributed under the [LGPL 2.1](http://www.gnu.org/licenses/lgpl-2.1.html) license. Please read LICENSE for information on the
-software availability and distribution.
+## 版权
+VCMS一切版权归 [“珠海威信特网络有限公司”](http://www.gnu.org/licenses/lgpl-2.1.html) 所有
+版权©2015-2016
 
 ## Installation & loading
 
