@@ -67,35 +67,23 @@ $this->get_dialog_model('Article/add_article_type_dialog');
 ###表单控件
 ```txt
 button:`{:W('Common/Form/button', array('btn'))}`
-
 checkbox:`{:W('Common/Form/checkbox', array('id', 'name', 'label_name', 1, 'help_block'))}`
-
 date-picker:`{:W('Common/Form/datepicker', array('id', 'name', 'label_name', $value, 'yyyy/mm/dd', 'help_block'))}`
-
 hidden:`{:W('Common/Form/hidden_input', array('id', 'name', $value))}`
-
 input:`{:W('Common/Form/input', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
 
 multiple-select:`{:W('Common/Form/multiple_select', array($id, $name, $label_name, $options, 'place_holder', 'help_block'))}`
-
 password:`{:W('Common/Form/password', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
-
 phone:`{:W('Common/Form/phone', array($id, $name, $label_name, $value, 'place_holder', 'help_block'))}`
 
 search-input:`{:W('Common/Form/search_input', array($id, $name, 'place_holder', 'direction', 'ico'))}`
-
 single-select:`{:W('Common/Form/single_select', array('id', 'name', 'label_name', $options, $value, 'place_holder', 'help_block'))}`
-
 spinner:`{:W('Common/Form/spinner', array($id, $name, $label_name, $value, 'help_block'))}`
-
 submit:`{:W('Common/Form/submit', array('btn', 'back', 'back_link'))}`
 
 textarea:`{:W('Common/Form/textarea', array('id', 'name', 'label_name', $value, 'place_holder', 'help_block'))}`
-
 timer-picker:`{:W('Common/Form/timerpicker', array('id', 'name', 'label_name', $value, 'yyyy/mm/dd', 'help_block'))}`
-
 upload:`{:W('Common/Form/upload', array('id', 'name', 'label_name', $value, 'queue_id'))}`
-
 ueditor:`{:W('Common/Form/ueditor', array($id, $name, $label_name, $value, 'help_block'))}`
 ```
 注意：单选框和多选框的$options值是使用select_array_by_key($dbarray, $key, $value)方法获取名值对应的数组。
