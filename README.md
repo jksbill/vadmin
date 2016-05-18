@@ -1,4 +1,4 @@
-﻿![VCMS](http://vcms.liangzibiao.com/Vsonter/login)
+﻿![VCMS](http://www.vsonter.com/Public/images/logo.png)
 
 # VCMS
 
@@ -13,7 +13,7 @@ VCMS是一款轻量级的、最原始的文章管理系统，其他系统可以�
 - 文章管理
 - 问答管理
 - 实现多媒体版本（手机和电脑）
-- 各种js插件已经初始化好，如（UEditor,Uploadify等）
+- 各种js插件已经初始化，如（UEditor,Uploadify等）
 - 集成短信与邮件模块
 - 集成百度地图api
 - 登录模块
@@ -46,12 +46,15 @@ delete_db_batch('Article', $ids);
 ```
 注意：前台遍历checkbox按钮是，要给input加上data-id属性，以便后台获取到需要删除的ids。
 
-Many PHP developers utilize email in their code. The only PHP function that supports this is the `mail()` function. However, it does not provide any assistance for making use of popular features such as HTML-based emails and attachments.
-
-Formatting email correctly is surprisingly difficult. There are myriad overlapping RFCs, requiring tight adherence to horribly complicated formatting and encoding rules - the vast majority of code that you'll find online that uses the `mail()` function directly is just plain wrong!
-*Please* don't be tempted to do it yourself - if you don't use PHPMailer, there are many other excellent libraries that you should look at before rolling your own - try SwiftMailer, Zend_Mail, eZcomponents etc.
-
-The PHP `mail()` function usually sends via a local mail server, typically fronted by a `sendmail` binary on Linux, BSD and OS X platforms, however, Windows usually doesn't include a local mail server; PHPMailer's integrated SMTP implementation allows email sending on Windows platforms without a local mail server.
+###模态框
+1、在需要点击弹出模态框的元素加入ajaxLink类，并可以在href或data-href中填写链接地址，
+如：
+```txt
+<a href="/vsonter/article/pre_add_article" class="btn btn-xs btn-primary right ajaxLink">
+    <i class="gi gi-plus"></i> 
+    新建文章
+</a>
+```
 
 ## License
 
