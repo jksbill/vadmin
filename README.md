@@ -31,12 +31,21 @@ $this->getPage('Article', $where, $listNum);
 ```php
 getPage('Article', $where, $listNum, true, 'create_time desc', 'join v_category on v_category.id = v_article.cid', 'LEFT');
 ```
-注意：设置默认展示条数要开启redis，切通过baseModel中的get_list_number(`默认展示条数`)函数设定
+注意：设置默认展示条数要开启redis，且通过baseModel中的`get_list_number(条数)`函数设定，并分配delete_url用于指定批量删除的具体链接。
 ```txt
 $listNum = $this->get_list_number($this->listNum);
 $this->delete_url = '/vsonter/article/delete_batch';
 $this->getPage('Article', $where, $listNum, true);
-```txt
+```
+
+###批量删除
+在delete_url对应的控制器中使用`delete_db_batch($table, $ids)`函数做批量删除。
+如：
+```php
+delete_db_batch('Article', $ids);
+```
+注意：前台遍历checkbox按钮是，要给input加上data-id属性，以便后台获取到需要删除的ids。
+
 Many PHP developers utilize email in their code. The only PHP function that supports this is the `mail()` function. However, it does not provide any assistance for making use of popular features such as HTML-based emails and attachments.
 
 Formatting email correctly is surprisingly difficult. There are myriad overlapping RFCs, requiring tight adherence to horribly complicated formatting and encoding rules - the vast majority of code that you'll find online that uses the `mail()` function directly is just plain wrong!
