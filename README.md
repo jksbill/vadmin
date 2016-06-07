@@ -34,8 +34,9 @@ getPage('Article', $where, $listNum, true, 'create_time desc', 'join v_category 
 ```
 注意：设置默认展示条数要开启redis，且通过baseModel中的`get_list_number(条数)`函数设定，并分配delete_url用于指定批量删除的具体链接。
 ```php
-$listNum = $this->get_list_number($this->listNum);
-$this->delete_url = '/vsonter/article/delete_batch';
+$this->make_query_string('search', $search, 'is_show', $is_show, 'p', $p); //设置网页后所带的参数
+$listNum = $this->get_list_number($this->listNum); //设置分页中的展示条数
+$this->delete_url = '/vsonter/article/delete_batch'; //设置执行批量删除的地址
 $this->getPage('Article', $where, $listNum, true);
 ```
 
@@ -47,6 +48,27 @@ $this->delete_db_batch('Article', $ids);
 ```
 注意：前台遍历checkbox按钮是，要给input加上data-id属性，以便后台获取到需要删除的ids。
 
+###删除单条
+```php
+$this->delete_by_id ('Article', $id);
+```
+
+###权限控制
+1、在需要权限控制的控制器中加入
+```php
+public function __auth () {
+    
+}
+```
+在__auth方法之前的方法才在权限控制配置中显示出来。
+
+2、在需要权限控制的控制器中的_initialize中或__contructor方法中加入check_auth($user)进行判断：
+```php
+public function _initialize () {
+    $auth = check_auth($admin);
+}
+```
+$auth返回的是true或false进行判断是否有权限。
 ###模态框
 1、在需要点击弹出模态框的元素加入ajaxLink类，并可以在href或data-href中填写链接地址，
 如：
@@ -100,10 +122,10 @@ ueditor:`{:W('Common/Form/ueditor', array($id, $name, $label_name, $value, 'help
 使用download($download_file_name, $server_file_path);方法下载文件
 
 ###表单验证
-1、封装formValidation插件，只要在需要验证的表单页面加上验证参数即可
+1、封装formValidation插件，只要在需要验证的表单页面加上验证选项“validate_option”即可
 ```javascript
 var validate_option = {
-    version: {
+    username: {
         row: '.col-sm-4',
         validators: {
             notEmpty: {
@@ -113,7 +135,16 @@ var validate_option = {
     },
 };
 ```
+2、在验证选项后添加验证控件
+```html
+{:W('Common/Form/form_validation', array())}
+```
+```txt
+注意：验证选项一定要放在验证控件之前，不然会报错。
+```
 
+###设备检测
+使用get_theme()方法检测是PC还是手机。
 ## 版权
 VCMS一切版权归 [珠海威信特网络有限公司](http://www.vsonter.com) 所有
 版权©2015-2016
